@@ -2,7 +2,7 @@
 /**
  * The parcela archive template file
  *
- * @package Canvi
+ * @package canvi
  */
 
 get_header();

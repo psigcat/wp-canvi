@@ -1,0 +1,27 @@
+.swiper {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.slide-sub {
+  background-color: #231f20b0;
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  height: 100px;
+  ont-size: 1.5rem;
+  color: white;
+}
+
+.slide-sub a {
+  color: white;
+}

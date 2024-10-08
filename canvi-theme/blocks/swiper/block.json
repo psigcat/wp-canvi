@@ -1,0 +1,16 @@
+{
+    "name": "swiper",
+    "title": "Swiper slider",
+    "description": "A custom slider block using ACF fields from CPT parcela.",
+    "style": [ "file:./swiper.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["parcela"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "swiper.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
