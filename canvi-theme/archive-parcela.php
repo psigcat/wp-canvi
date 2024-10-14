@@ -10,66 +10,15 @@ get_header();
 
 <main id="site-content">
 
-	<?php
+	<header class="archive-header has-text-align-center header-footer-group">
 
-	$archive_title    = '';
-	$archive_subtitle = '';
+		<div class="archive-header-inner section-inner medium">
 
-	if ( is_search() ) {
-		/**
-		 * @global WP_Query $wp_query WordPress Query object.
-		 */
-		global $wp_query;
+			<h1 class="archive-title">Parcelas</h1>
 
-		$archive_title = sprintf(
-			'%1$s %2$s',
-			'<span class="color-accent">' . __( 'Search:', 'twentytwenty' ) . '</span>',
-			'&ldquo;' . get_search_query() . '&rdquo;'
-		);
+		</div><!-- .archive-header-inner -->
 
-		if ( $wp_query->found_posts ) {
-			$archive_subtitle = sprintf(
-				/* translators: %s: Number of search results. */
-				_n(
-					'We found %s result for your search.',
-					'We found %s results for your search.',
-					$wp_query->found_posts,
-					'twentytwenty'
-				),
-				number_format_i18n( $wp_query->found_posts )
-			);
-		} else {
-			$archive_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'twentytwenty' );
-		}
-	} elseif ( is_archive() && ! have_posts() ) {
-		$archive_title = __( 'Nothing Found', 'twentytwenty' );
-	} elseif ( ! is_home() ) {
-		$archive_title    = get_the_archive_title();
-		$archive_subtitle = get_the_archive_description();
-	}
-
-	if ( $archive_title || $archive_subtitle ) {
-		?>
-
-		<header class="archive-header has-text-align-center header-footer-group">
-
-			<div class="archive-header-inner section-inner medium">
-
-				<?php if ( $archive_title ) { ?>
-					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
-				<?php } ?>
-
-				<?php if ( $archive_subtitle ) { ?>
-					<div class="archive-subtitle section-inner thin max-percentage intro-text"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
-				<?php } ?>
-
-			</div><!-- .archive-header-inner -->
-
-		</header><!-- .archive-header -->
-
-		<?php
-	}
-	?>
+	</header><!-- .archive-header -->
 
 	<aside class="search-outer-wrapper">
    		<div class="search-wrapper">
@@ -81,39 +30,57 @@ get_header();
 		</div>
 	</aside>
 
+	<?php $uri = explode('?', $_SERVER['REQUEST_URI'], 2)[0]; ?>
+
+	<div class="display">
+		<a href="<?php echo $uri; ?>?display=grid">grid</a> 
+		<a href="<?php echo $uri; ?>?display=table">table</a>
+	</div>
+
 	<?php
+
+	if (isset($_GET['display']) && $_GET['display'] == 'table'): ?>
+		<div class="table">
+			<table>
+				<thead>
+					<td>Nombre</td>
+					<td>Varietat</td>
+					<td>Año</td>
+					<td>Superficie [ha]</td>
+					<td>Subzona</td>
+				</thead>
+	<?php else: ?>
+		<div class="grid">
+	<?php endif;
+
 	if ( have_posts() ) {
 
 		$i = 0;
 
 		while ( have_posts() ) {
 			++$i;
-			if ( $i > 1 ) {
+			/*if ( $i > 1 ) {
 				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
-			}
+			}*/
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			if (isset($_GET['display']) && $_GET['display'] == 'table') {
 
+				get_template_part( 'template-parts/content-table', get_post_type() );
+
+			} else {
+
+				get_template_part( 'template-parts/content-grid', get_post_type() );
+
+			}
 		}
-	} elseif ( is_search() ) {
-		?>
-
-		<div class="no-search-results-form section-inner thin">
-
-			<?php
-			get_search_form(
-				array(
-					'aria_label' => __( 'search again', 'twentytwenty' ),
-				)
-			);
-			?>
-
-		</div><!-- .no-search-results -->
-
-		<?php
 	}
-	?>
+
+	if (isset($_GET['display']) && $_GET['display'] == 'table'): ?>
+		</table>
+	<?php endif; ?>
+
+	</div>
 
 	<?php get_template_part( 'template-parts/pagination' ); ?>
 

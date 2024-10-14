@@ -12,15 +12,13 @@ Text Domain: canvi
 /*
  * Home
  ********************/
-
+.home .entry-header {
+    display: none;
+}
 
 /*
  * Parcela
  ********************/
-.entry-title {
-	color: red;
-}
-
 .mapa img {
 	width: 500px;
 }
@@ -85,10 +83,78 @@ Text Domain: canvi
 }
 
 /*
+ * Grid
+ ********************/
+.grid, .table {
+    width: 75%;
+}
+
+.grid {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-auto-flow: dense;
+}
+
+.grid article.parcela {
+    width: 100%;
+    height: 400px;
+    float: left;
+    position: relative;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    border-right: 2px solid white;
+}
+
+.grid article.parcela .bgparcela {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.grid article.parcela .parcela_grid_title {
+    padding: 20px;
+    position: absolute;
+    top: 0;
+}
+
+.grid article.parcela .parcela_grid_info {
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+}
+
+@media only screen and (max-width: 430px) {
+    .grid, .table {
+        width: 100%;
+    }
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/*
+ * Table
+ ********************/
+.table {
+    display: flex;
+}
+
+/*
  * Search
  ********************/
 .search-outer-wrapper {
   width: 25%;
   float: left;
   padding: 20px;
+}
+
+@media only screen and (max-width: 430px) {
+    .search-outer-wrapper {
+        width: 100%;
+        padding: 20px;
+    }
 }
