@@ -8,16 +8,16 @@ const swiper = new Swiper('.swiper', {
       slidesPerGroup: 3,
     },
     940: {
-      slidesPerView: 5,
-      slidesPerGroup: 5,
+      slidesPerView: 4,
+      slidesPerGroup: 4,
     }
   },
   loopFillGroupWithBlank: true,
   spaceBetween: 20,
   loop: true,
-  /*autoplay: {
-    delay: 3000,
-  },*/
+  autoplay: {
+    delay: 7000,
+  },
 
   pagination: {
     el: '.swiper-pagination',
