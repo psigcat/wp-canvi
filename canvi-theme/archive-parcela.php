@@ -14,7 +14,7 @@ get_header();
 
 		<div class="archive-header-inner section-inner medium">
 
-			<h1 class="archive-title">Parcelas</h1>
+			
 
 		</div><!-- .archive-header-inner -->
 
@@ -33,9 +33,15 @@ get_header();
 	<?php $uri = explode('?', $_SERVER['REQUEST_URI'], 2)[0]; ?>
 
 	<div class="display">
-		<a href="<?php echo $uri; ?>?display=grid">grid</a> 
-		<a href="<?php echo $uri; ?>?display=table">table</a>
-	</div>
+		<a href="<?php echo $uri; ?>?display=table" title="Vista de Tabla">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/table-icon.svg">
+		</a>
+		<a href="<?php echo $uri; ?>?display=grid" title="Vista de Cuadrícula">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/icons/grid-icon.svg">
+		</a>
+		
+    </div>
+
 
 	<?php
 
