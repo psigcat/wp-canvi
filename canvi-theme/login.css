@@ -1,0 +1,55 @@
+.login {
+    background: #fff;
+}
+
+#login h1 a, .login h1 a {
+    background-image: url(../../uploads/2024/10/logo.png);
+    width: 220px;
+    height: 105px;
+    background-size: 220px 105px;
+    background-repeat: no-repeat;
+}
+
+.login form {
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 26px 24px 46px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #fff;
+    border: 0px solid #ccd0d4;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    border-radius: 0px;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+    min-height: 32px;
+    line-height: 2.30769231;
+    padding: 0 12px;
+    background: black;
+    border-color: black;
+    color: white;
+}
+
+.wp-core-ui .button, .wp-core-ui .button-secondary {
+    color: #000;
+    border-color: #0071a1;
+    background: #f3f5f6;
+    vertical-align: top;
+}
+
+.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
+    color: #000;
+}
+
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+    background: #535353;
+    border-color: #464646;
+    color: #fff;
+}
+
+input[type="checkbox"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="radio"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, select:focus, textarea:focus {
+    border-color: #333;
+    box-shadow: 0 0 0 1px #000;
+    outline: 2px solid transparent;
+}

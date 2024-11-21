@@ -42,10 +42,38 @@ if ( $parcela_query->have_posts() ) : ?>
         }
 
         //$style = " style='background-image:url(" . get_site_url() . "/wp-content/mapas/id_" . $id . ".png)'";
-        $style = " style='background-image:url(" . get_stylesheet_directory_uri() . "/images/raim_" . $color . ".jpg)'";
+        //$style = " style='background-image:url(" . get_stylesheet_directory_uri() . "/images/raim_" . $color . ".jpg)'";
 
-        //$title = get_field('nombre')[0]['nombre'] . ' (' . get_post_meta(get_the_id(), 'simplefavorites_count', true) . ')';
-        echo '<div class="swiper-slide" data-id="' . get_the_permalink() . '"'.$style.'><div class="slide-sub"><a href="' . get_the_permalink() . '" title="' . $title . '">' . $title . '</a><br><span class="ha">Superficie: ' . $ha . ' [ha]</span><br><span class="ha">Subzona: ' . $color. $subzona . '</span></div></div>';
+        ?>
+
+        <div class="swiper-slide" data-id="<?php echo get_the_permalink(); ?>" <?php //echo $style; ?>>
+          <div class="slide-top">
+            <span class="id"><?php echo $id; ?></span><br>
+            <a href="<?php echo get_the_permalink(); ?>"><?php echo $title; ?></a><br>
+            <span class="pot">Potencialidad: <?php echo get_field('tipus_guarda', get_the_ID()); ?></span>
+          </div>
+          <div class="d_o_box">
+          <?php 
+            $d_o = get_field( 'd_o_tax', get_the_ID() );
+            if( $d_o ){
+              foreach( $d_o as $term ): ?>
+                <img class="d_o" src="<?php echo get_stylesheet_directory_uri(); ?>/images/do_<?php echo esc_html( $term->slug ); ?>.png" />
+                <?php endforeach;
+            } 
+          ?>
+          </div>
+
+          <div class="raim_box">
+            <img src="<?php echo get_stylesheet_directory_uri() . "/images/raim_" . $color; ?>.jpg">
+          </div>
+
+          <div class="slide-sub">
+            <!--<a href="<?php echo get_the_permalink(); ?>" title="<?php echo $title; ?>"><?php echo $title; ?></a><br><span class="ha">Superficie: <?php echo $ha; ?> [ha]</span><br><span class="ha">Subzona: <?php echo $color . $subzona ; ?></span>-->
+            <a class="button" href="<?php echo get_the_permalink(); ?>">Ficha de producto</a>
+          </div>
+        </div>
+
+      <?php 
       endwhile; 
       ?>
 

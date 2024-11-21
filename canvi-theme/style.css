@@ -26,12 +26,16 @@ Text Domain: canvi
   display: none; /* Oculta solo los textos dentro del span */
 }
 
-
 /*
  * Parcela
  ********************/
 .mapa img {
 	width: 500px;
+}
+
+img.d_o {
+    width: 100px;
+    display: inline-block;
 }
 
 .parcela_info_container {
@@ -106,6 +110,11 @@ Text Domain: canvi
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-auto-flow: dense;
+    color: white;
+}
+
+.grid a {
+    color: white;
 }
 
 .grid article.parcela {
@@ -129,13 +138,13 @@ Text Domain: canvi
     padding: 20px;
     position: absolute;
     top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .grid article.parcela .parcela_grid_info {
     padding: 20px;
-    position: absolute;
-    bottom: 0;
-    height: 100px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
 }
 
 @media only screen and (max-width: 430px) {

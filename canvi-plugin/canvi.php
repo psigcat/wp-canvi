@@ -78,7 +78,7 @@ add_filter( 'posts_where', 'canvi_search_where' );
  *
  * http://codex.wordpress.org/Plugin_API/Filter_Reference/posts_distinct
  */
-function parcela_search_distinct( $where ) {
+function canvi_search_distinct( $where ) {
     global $wpdb;
 
     if ( is_search() ) {
@@ -87,7 +87,7 @@ function parcela_search_distinct( $where ) {
 
     return $where;
 }
-add_filter( 'posts_distinct', 'parcela_search_distinct' );
+add_filter( 'posts_distinct', 'canvi_search_distinct' );
 
 /**
  * Limit the main query search results to 25.
@@ -146,4 +146,23 @@ function canvi_add_cap_upload() {
 }
 add_action( 'init', 'canvi_add_cap_upload' );
 
+
+/**
+ * Altering Parcela post title
+ */
+function canvi_update_acf_post_object_parcela_title($title, $post, $field, $post_id) {
+
+    if ($post->post_type == 'parcela') {
+    
+        $ref = get_field('id_sigpac', $post->ID);
+
+        if ( $ref ) {
+            $title = $title . ' [' . $ref .  ']';
+        }
+    }
+
+    //return $title . ' [' . $post->ID .  ']';
+    return $title;
+}
+add_filter( 'acf/fields/post_object/result', 'canvi_update_acf_post_object_parcela_title', 10, 4 );
 ?>

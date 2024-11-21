@@ -59,9 +59,9 @@
 				$produccio      = get_field( 'produccio_estimada' );
 			?>
 
-			<div class="mapa">
+			<!--<div class="mapa">
 				<img src="<?php echo get_site_url(); ?>/wp-content/mapas/id_<?php echo $id; ?>.png" />
-			</div>
+			</div>-->
 
 			<!-- <div class="parcela">
 		        <?php echo esc_html( $ccaa ); ?>
@@ -71,6 +71,19 @@
 			</div> -->
 
 			<h2> <?php _e( 'Información', 'canvi' ); ?> </h2>
+
+			<div>
+				Denominación de orígen: <?php echo $d_o; ?>
+
+				<?php 
+					$d_o = get_field( 'd_o_tax' );
+					if( $d_o ){
+						foreach( $d_o as $term ): ?>
+							<img class="d_o" src="<?php echo get_stylesheet_directory_uri(); ?>/images/do_<?php echo esc_html( $term->slug ); ?>.png" />
+					    <?php endforeach;
+					} 
+				?>
+			</div>
 
 			<div class="parcela_info_container">
 			<div class="parcela_col">
