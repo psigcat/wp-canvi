@@ -22,15 +22,661 @@ Text Domain: canvi
     background-position: center;
 }
 
-.primary-menu-wrapper a span {
-  display: none; /* Oculta solo los textos dentro del span */
+
+
+.home .home-box {
+	max-width: none !important;
 }
+
+
+/* Fondo general de la sección */
+.home .custom-section {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 0; /* Eliminar el padding superior e inferior para que el contenedor ocupe todo el espacio */
+    min-height: 50vh; /* Hace que el contenedor ocupe toda la altura de la pantalla */
+    margin: 0; /* Elimina cualquier margen alrededor del contenedor */
+}
+
+/* Contenido general */
+.home .custom-content {
+    display: flex; /* Alinea texto e imagen horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 40px; /* Espaciado entre texto e imagen */
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+}
+
+/* Texto */
+.home .custom-text {
+    flex: 1; /* Ocupa el espacio necesario para el texto */
+    color: #333333; /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+.home .custom-text p {
+    margin-bottom: 20px; /* Espaciado entre párrafos */
+}
+
+/* Botones */
+.home .custom-buttons {
+    margin-top: 20px; /* Espaciado superior para los botones */
+}
+
+.home .custom-button {
+    display: inline-block; /* Asegura que los botones estén alineados horizontalmente */
+    background-color: #b91d1d; /* Color rojo */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 20px; /* Tamaño del botón */
+    font-size: 16px; /* Tamaño del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    margin-right: 10px; /* Espaciado entre los botones */
+}
+
+.home .custom-button:hover {
+    background-color: #a71a1a; /* Oscurece el color al pasar el cursor */
+}
+
+/* Imagen */
+.home .custom-image {
+    flex: 1; /* Ocupa el espacio necesario */
+    text-align: center; /* Centra la imagen */
+}
+
+.home .custom-image img {
+    max-width: 100%; /* Escala la imagen según el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Asegura que la sección tenga el fondo blanco que se extiende a toda la página */
+body {
+    background-color: #ffffff; /* Fondo blanco para todo el cuerpo de la página */
+}
+
+.home .container {
+            display: flex;
+        }
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .right {
+            flex: 1;
+            background-image: url('https://placehold.co/800x600');
+            background-size: cover;
+            background-position: center;
+        }
+        .logo img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 14px;
+            color: #c00;
+            margin-bottom: 40px;
+        }
+        .welcome-text {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        .home_button {
+            border: 1px solid #c00;
+            padding: 10px 20px;
+            color: #c00;
+            text-decoration: none;
+        }
+
+
+.home .entry-content > div {
+	max-width: 80% !important;
+}
+
+
+.table-container {
+    width: 80%;
+    margin: 50px auto;
+    overflow: hidden; /* Oculta el contenido fuera del área visible */
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 !important;
+    table-layout: fixed; /* Asegura que las columnas tengan un ancho fijo y alineado */
+}
+
+thead {
+    position: sticky; /* Fija la cabecera */
+    top: 0;
+    background: white;
+    z-index: 10; /* Asegura que la cabecera esté siempre por encima */
+    border: none; /* Elimina los bordes del encabezado */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle; /* Centra verticalmente el contenido */
+    border: 1px solid #ddd; /* Añade bordes sutiles para el cuerpo */
+    box-sizing: border-box; /* Asegura que el padding se incluye en el tamaño de las celdas */
+}
+
+th {
+    color: #A52A2A;
+    font-size: 18px;
+    border: none; /* Elimina los bordes en el encabezado */
+}
+
+td {
+    font-size: 16px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.price-down {
+    color: red;
+}
+
+.price-up {
+    color: green;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: auto; /* Asegura que los puntos estén centrados horizontal y verticalmente */
+}
+
+.dot-green {
+    background-color: #808000;
+}
+
+.dot-red {
+    background-color: #8B0000;
+}
+
+.scrollable-content {
+    overflow: hidden; /* Oculta contenido desplazado */
+    height: 100px; /* Ajusta la altura del área visible */
+    position: relative;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.scrollable-content table tbody {
+    display: block; /* Asegura que solo el cuerpo se desplace */
+    animation: scroll 40s linear infinite;
+    width: 100%; /* Asegura que el contenido tenga el mismo ancho que el encabezado */
+    animation-timing-function: linear; /* Asegura que el desplazamiento sea continuo sin pausas */
+    position: relative;
+}
+
+.scrollable-content td,
+thead th {
+    width: 14.28%; /* Divide el espacio disponible equitativamente entre las columnas */
+}
+
+.scrollable-content tbody tr {
+    display: flex; /* Asegura que las filas tengan un comportamiento de "bloques" flexibles */
+    width: 100%;
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+
+pre, fieldset, input, textarea, table, table *, hr {
+    border-color: #ffffff !important;
+}
+
+
+
+
+
+
+.home .accede_button {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.accede_button button {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold; /* Más énfasis */
+    cursor: pointer;
+    border-radius: 5px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación suave */
+}
+
+.accede_button button:hover {
+    background-color: #a11919; /* Color más claro al pasar el cursor */
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+.accede_button button:focus {
+    outline: 3px solid #8B0000; /* Añade un borde de foco */
+    background-color: #6d0000; /* Color más oscuro para el foco */
+}
+
+		.content_ofrece h1 {
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: 0; /* Elimina el margen superior */
+			margin-bottom: 20px; /* Espaciado adecuado solo debajo del título */
+			line-height: 1.2; /* Ajusta la altura de línea si es necesario */
+			display: flex; /* Alineación horizontal */
+			justify-content: center;
+			align-items: center;
+		}
+
+
+        .content_ofrece {
+			display: flex; /* Activa Flexbox */
+			flex-direction: column; /* Apila los elementos verticalmente */
+			justify-content: center; /* Centra el contenido verticalmente */
+			align-items: center; /* Centra el contenido horizontalmente */
+			text-align: center; /* Centra el texto */
+			padding: 50px 20px; /* Mantiene el padding original */
+			background-image: url('https://mapa.psig.es/canvi/wp-content/themes/canvi/images/raim_ofrece.jpg');
+			background-size: cover;
+			background-position: center;
+			color: #333;
+			position: relative; /* Permite agregar pseudo-elementos si es necesario */
+			height: auto; /* Asegura que el contenedor solo ocupe el espacio necesario */
+			min-height: 300px; /* Asegura que tenga una altura mínima razonable */
+		}
+        .content_ofrece h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .content_ofrece h1 span {
+            color: #8B0000;
+            font-style: italic;
+			padding-right: 10px
+        }
+        .content_ofrece p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .content_ofrece p span {
+            font-weight: bold;
+        }
+		
+		
+		
+.container_ofrece_2 {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.container_ofrece_2 h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container_ofrece_2 h1 span {
+    color: #e74c3c;
+}
+
+/* Contenedor para las 4 tarjetas */
+.features_container {
+    display: flex;  /* Distribuye las tarjetas horizontalmente */
+    justify-content: space-between;  /* Espacio entre las tarjetas */
+    gap: 20px;  /* Espaciado entre las tarjetas */
+    flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en filas en pantallas pequeñas */
+    margin-top: 50px;
+}
+
+/* Estilos comunes para cada tarjeta */
+.features_ofrece {
+    flex: 1;  /* Permite que las tarjetas ocupen el mismo espacio */
+    min-width: 220px;  /* Asegura que las tarjetas no sean demasiado estrechas */
+    max-width: 300px;  /* Asegura que las tarjetas no se expandan demasiado */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra opcional */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Estilo de las tarjetas rojas */
+.features_ofrece.red {
+    background-color: #7b1f1f;
+    color: #fff;
+}
+
+/* Estilo de las tarjetas blancas */
+.features_ofrece.white {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Estilo de los iconos */
+.features_ofrece i {
+    font-size: 40px;  /* Tamaño del ícono */
+    margin-bottom: 20px;
+    color: inherit;  /* El color del ícono será el mismo que el texto */
+}
+
+/* Estilos de los títulos dentro de las tarjetas */
+.features_ofrece h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para los párrafos dentro de las tarjetas */
+.features_ofrece p {
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Responsividad para pantallas grandes (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .features_ofrece {
+        width: 48%;  /* En pantallas medianas, las tarjetas ocupan 48% del ancho */
+    }
+}
+
+/* Responsividad para pantallas medianas (max-width: 768px) */
+@media (max-width: 768px) {
+    .features_ofrece {
+        width: 100%;  /* En pantallas más pequeñas, las tarjetas ocupan el 100% del ancho */
+    }
+}
+
+.container_ofrece_2 h1 {
+    font-size: 36px;
+    font-weight: bold;
+    display: flex; /* Alineación horizontal */
+    justify-content: center;
+    align-items: center;
+}
+
+.container_ofrece_2 h1 span {
+    color: black; /* Color rojo solo para el texto de "canvi" */
+    margin-right: 10px; /* Espacio entre el texto y el logo */
+}
+
+.container_ofrece_2 h1 span.canvi-text {
+    color: #e74c3c; /* Color rojo solo para el texto de "canvi" */
+    margin-right: 10px; /* Espacio entre el texto y el logo */
+}
+
+.logo-canvi {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción original */
+    vertical-align: middle; /* Alinea el logo con el texto */
+}
+
+
+
+
+
+
 
 /*
  * Parcela
  ********************/
-.mapa img {
-	width: 500px;
+
+
+.pagination-single .section-inner {
+	display: none;
+}	
+
+h1.entry-title {
+	display: none;
+}
+
+.entry-header {
+	display: none;
+}
+
+.post-inner {
+        padding-top: 0;
+    }
+	
+
+.parcela-mini-ficha .id {
+	font-size: 15px;
+}
+
+
+.parcela-mini-ficha .title {
+	color: #b91d1d;
+	word-wrap: break-word;
+}
+
+
+.slide-top {
+	padding: 0px;
+}
+
+
+.parcela .column {
+  width: 50%;
+  float: left;
+}
+
+.parcela .entry-content > div {
+	max-width: 80rem !important;
+}
+
+
+
+
+.spacer {
+    height: 20px; /* Define el espacio entre "Potencialidad" y "info-boxes" */
+}
+
+/* Contenedor principal de las tres columnas */
+/* Contenedor principal */
+.info_container {
+    display: flex; /* Mantén el layout en fila */
+    justify-content: space-between; /* Asegura que los elementos se distribuyan horizontalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    gap: 20px; /* Espacio entre las columnas */
+    clear: both;
+}
+
+/* Contenedor de las imágenes de Raim y DO */
+.info_container .info_boxes {
+    display: flex; /* Coloca Raim y DO en fila */
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    flex: 2; /* Permite que este contenedor ocupe más espacio */
+}
+
+/* Columna de botones */
+.info_container .action_buttons {
+    display: flex;
+    flex-direction: column; /* Coloca los botones en columna */
+    gap: 15px; /* Espacio entre los botones */
+    align-items: center;
+    justify-content: flex-start; /* Alinea los botones al inicio */
+    flex: 1; /* Permite que este contenedor ocupe menos espacio */
+}
+
+/* Asegura que los botones tengan fondo transparente */
+.info_container .action_button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin bordes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+    cursor: pointer;
+	flex-direction: column;
+	padding: 0;
+}
+
+/* Iconos dentro de los botones */
+.info_container .action_button img {
+    width: 35px;
+    height: auto;
+}
+
+/* Asegura que no haya fondo rojo */
+.info_container .action_button {
+    background-color: transparent;
+}
+
+.info_container .action_button:hover {
+    background-color: transparent; /* Sin fondo en hover */
+}
+
+
+/* Ajusta los tamaños de las columnas para que se vean bien */
+.info_container .raim_box, .d_o_box {
+    width: 50%; /* Asegura que cada caja tome el 50% del espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column
+}
+
+
+/* Asegúrate de que las imágenes dentro de las cajas de d_o y raim se ajusten correctamente */
+.info_container .raim_box img {
+    max-width: auto !important;
+    height: auto !important;
+}
+
+
+.info_container .d_o_box img {
+    max-width: auto !important;
+    height: auto !important;
+}
+
+
+
+/* Estilo para el número de visualizaciones */
+.info_container .action_button .view_count {
+    margin-left: 10px; /* Espacio entre el icono y el número de visualizaciones */
+    font-size: 14px; /* Tamaño del número de visualizaciones */
+    color: #333; /* Color del número */
+    font-weight: bold;
+}
+
+
+.info_container .whatsapp_button img {
+    width: 32px; /* Tamaño específico para el icono de WhatsApp */
+    height: 32px;
+}
+
+
+
+
+/* Contenedor de los botones */
+.box-buttons {
+    display: flex; /* Los botones estarán uno al lado del otro */
+    justify-content: space-evenly; /* Espacio entre los botones */
+    align-items: center; /* Alineación vertical */
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 20px; /* Espacio superior para separar de otros elementos */
+}
+
+/* Estilo base para ambos botones */
+.box-buttons .box {
+    padding: 15px 20px; /* Espaciado interno del texto */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    color: #fff; /* Texto blanco */
+    text-align: center; /* Centrar texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Manito al pasar el cursor */
+}
+
+/* Botón verde para la oferta */
+.box-buttons .offer-button {
+    background-color: #28a745; /* Color verde */
+}
+
+/* Botón naranja para la caducidad */
+.box-buttons .expiry-button {
+    background-color: #f39c12; /* Color naranja */
+}
+
+
+.box-buttons .comprar {
+    background-color: #b91d1d;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Quita el subrayado si usas un enlace */
+    display: block; /* Asegura que el enlace se comporte como un botón */
+	margin: 0 auto;
+}
+
+.comprar:hover {
+    background-color: #a11919; /* Cambia el color en hover */
+}
+
+
+
+
+
+
+.pot .potencialidad {
+    color: #b91d1d; /* Color rojo para 'Potencialidad' */
+}
+
+.pot .guarda-superior,
+.pot .tipus-guarda {
+    color: black; /* Color negro para 'Guarda Superior' y 'tipus_guarda' */
+}
+
+.post-meta-wrapper {
+	display: none; 
+}
+
+img.mapa {
+	width: 50%;
+    float: right;
 }
 
 img.d_o {
@@ -39,64 +685,62 @@ img.d_o {
 }
 
 .parcela_info_container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    display: flex;  /* Establece el layout de flexbox */
+    justify-content: space-between;  /* Asegura que haya espacio entre las columnas */
+    align-items: flex-start; /* Alinea las columnas al principio en el eje vertical */
 }
 
 .parcela_col {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* Coloca los elementos de la columna en una dirección vertical */
+    gap: 0px; /* Espacio entre los elementos dentro de la columna */
+    flex: 1; /* Hace que cada columna ocupe el mismo espacio disponible */
 }
 
 .parcela_info {
     display: flex;
     align-items: center;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-left: none; /* Elimina el borde izquierdo */
-    border-radius: 5px;
     position: relative;
     overflow: visible;
-    height: 60px; /* Ajusta según lo que necesites */
+    min-height: 60px; /* Altura mínima */
 }
 
-.parcela_icon_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #a0847a;
-    border-radius: 50%;
-    margin-right: 20px;
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 .parcela_info img {
-    width: 24px;
+    width: 28px; /* Ajustamos el tamaño del icono */
+    height: auto; /* Mantener la proporción original */
 }
+
+
 
 .parcela_title {
-    font-weight: bold;
-    margin-left: 20px;
-}
-
-.parcela_separator {
-    width: 1px;
-    background-color: #ccc; /* Color de la línea */
-    height: 100%; /* La línea ocupará toda la altura del contenedor */
-    margin: 0 15px; /* Separación entre el título y el valor */
+    color: #b91d1d;
+    flex-shrink: 0; /* Evita que el título se reduzca más de lo necesario */
+    white-space: nowrap; /* Evita que el título se divida en varias líneas */
+    min-width: 50px; /* Establece un ancho mínimo para el título si es necesario */
 }
 
 .parcela_valor {
-    color: #555;
+    color: #555; 
+    white-space: nowrap; /* Evita que el valor se rompa en varias líneas */
+	margin-left: 10px;
 }
 
+
+/* Media Query para asegurar que en pantallas pequeñas el comportamiento sigue igual */
+@media (max-width: 768px) {
+    .parcela_col {
+        flex: 0 1 48%; /* Las columnas siguen ocupando el 50%, no apilan */
+    }
+}
+
+
+
+
+/*
+ * Grid
+ ********************/
 /*
  * Grid
  ********************/
@@ -107,24 +751,29 @@ img.d_o {
 .grid {
     width: 75%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
     grid-template-rows: auto;
     grid-auto-flow: dense;
     color: white;
 }
 
 .grid a {
-    color: white;
+    color: #b91d1d;
+}
+
+.grid .id {
+    color: #666;
+    font-size: 13px;
 }
 
 .grid article.parcela {
-      /* width: 100%; */
-    height: 400px;
-    float: left;
     position: relative;
     margin-bottom: 5px;
     margin-right: 5px;
-    /* border-right: 2px solid white; */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos dentro de la caja se apilen verticalmente */
+    height: 100%; /* Asegura que la altura de la caja sea uniforme */
+    overflow: hidden; /* Evita que cualquier desbordamiento cambie el diseño */
 }
 
 .grid article.parcela .bgparcela {
@@ -135,18 +784,150 @@ img.d_o {
 }
 
 .grid article.parcela .parcela_grid_title {
+    color: #b91d1d;
     padding: 20px;
-    position: absolute;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+    max-height: auto; /* Eliminamos la restricción de altura */
 }
 
+.grid article.parcela .parcela_grid_title a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    line-height: 1.2;
+}
+
+.grid article.parcela .parcela_grid_title .pot {
+    text-align: left;
+    white-space: nowrap; /* Evitar que el texto de "Potencialidad" se rompa */
+    overflow: hidden; /* Asegura que no se desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si es necesario */
+    width: 100%; /* Asegura que ocupe todo el espacio disponible */
+}
+
+/* Ajuste de la caja de botones de compartir */
+.bgparcela .share-butons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.bgparcela .share-butons img {
+    width: 24px;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Botones 'Comprar' */
+.grid_comprar a {
+    color: white;
+}
+
+.grid_comprar {
+    background-color: #b91d1d;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.grid_comprar:hover {
+    background-color: #a11919;
+}
+
+/* Apartado de información: color original */
 .grid article.parcela .parcela_grid_info {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
     font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    gap: 16px;
+    align-items: start;
+    background-color: transparent; /* Elimina el fondo gris */
 }
 
+.grid article.parcela .parcela_grid_info .column-ele {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden; /* Evita desbordamientos */
+}
+
+.grid article.parcela .parcela_grid_info .label {
+    color: #b91d1d; /* Color rojo para la etiqueta */
+}
+
+.grid article.parcela .parcela_grid_info .value {
+    color: #666; /* Color gris para el valor */
+}
+
+.bgparcela {
+    border: 1px solid red; /* Borde de 5px de grosor y color rojo */
+}
+
+.bgparcela .raim-box {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.bgparcela .grid-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    justify-items: center;
+}
+
+.bgparcela .d_o_box,
+.bgparcela .raim_box,
+.bgparcela .share-butons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bgparcela .d_o_box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bgparcela .raim_box img {
+    width: 100%;
+    height: auto;
+}
+
+.bgparcela .raim_box.raim-negro img {
+    width: 100%;
+}
+
+.bgparcela .raim_box.raim-blanco img {
+    width: 100%;
+}
+
+.bgparcela .share-butons img {
+    width: 24px;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Ajustes para la visualización en pantallas pequeñas */
 @media only screen and (max-width: 430px) {
     .grid, .table {
         width: 100%;
@@ -154,7 +935,15 @@ img.d_o {
     .grid {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .bgparcela .share-butons img {
+        width: 20px;
+    }
 }
+
+
+
+
 
 /*
  * Table
@@ -297,7 +1086,6 @@ img.d_o {
     background-color: #f5f5f5; /* Color de fondo opcional */
     border: 1px solid #e0e0e0; /* Bordes opcionales */
 }
-
 
 
 .display {

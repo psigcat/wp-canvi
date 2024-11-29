@@ -9,7 +9,7 @@
 
 // Load values
 $id				= get_field( 'id' );
-$varietats		= get_field( 'varietat' );
+$varietats		= get_field( 'varietat_tax' );
 $campanya_rv	= get_field( 'campanya_rv' );
 $ha				= get_field( 'ha' );
 $subzona      	= get_field( 'subzona' );

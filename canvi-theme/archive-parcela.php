@@ -59,36 +59,55 @@ get_header();
 		<div class="grid">
 	<?php endif;
 
-	if ( have_posts() ) {
+		// wp-query to get all published parcelas in random order
+		$allPostsWPQuery = new WP_Query(array(
+			'post_type'=>'parcela', 
+			'post_status'=>'publish', 
+			'posts_per_page'=>100,
+			//'orderby' => 'rand',
+		));
+	?>
 
-		$i = 0;
+	<?php if ( have_posts() ) {
 
 		while ( have_posts() ) {
-			++$i;
-			/*if ( $i > 1 ) {
-				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
-			}*/
 			the_post();
+
+			if (isset($_GET['display']) && $_GET['display'] == 'table') {
+				get_template_part( 'template-parts/content-table', get_post_type() );
+			} else {
+				get_template_part( 'template-parts/content-grid', get_post_type() );
+			}
+		}
+	}?>
+		 
+	<?php /*if ( $allPostsWPQuery->have_posts() ) :
+	 
+	    while ( $allPostsWPQuery->have_posts() ) : 
+	    	$allPostsWPQuery->the_post();
 
 			if (isset($_GET['display']) && $_GET['display'] == 'table') {
 
 				get_template_part( 'template-parts/content-table', get_post_type() );
-
 			} else {
 
 				get_template_part( 'template-parts/content-grid', get_post_type() );
-
 			}
-		}
-	}
-
-	if (isset($_GET['display']) && $_GET['display'] == 'table'): ?>
+	    	endwhile;
+			wp_reset_postdata();
+		else :*/ ?>
+	    <p><?php //_e( 'There no posts to display.' ); ?></p>
+	<?php /*endif;
+	if (isset($_GET['display']) && $_GET['display'] == 'table'):*/ ?>
 		</table>
-	<?php endif; ?>
+	<?php //endif; ?>
 
 	</div>
 
-	<?php get_template_part( 'template-parts/pagination' ); ?>
+	<?php 
+		//echo do_shortcode( '[ajax_load_more id="alm_canvi" post_type="parcela" posts_per_page="9"]' );
+		get_template_part( 'template-parts/pagination' );
+	?>
 
 </main><!-- #site-content -->
 

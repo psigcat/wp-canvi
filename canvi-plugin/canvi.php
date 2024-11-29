@@ -165,4 +165,19 @@ function canvi_update_acf_post_object_parcela_title($title, $post, $field, $post
     return $title;
 }
 add_filter( 'acf/fields/post_object/result', 'canvi_update_acf_post_object_parcela_title', 10, 4 );
+
+/**
+ * Let's capitalize all terms for Product type 
+ * and Product visibility
+ */
+/*add_filter('wpc_filter_taxonomy_term_name', 'wpc_modify_taxonomy_term_name', 10, 2 );
+function wpc_modify_taxonomy_term_name($term_name, $e_name)
+{
+    error_log($term_name.":".$e_name);
+    if (in_array($e_name, array('varietat_tax'))) {
+        $term_name = "";
+    }
+    return "";
+}*/
+
 ?>

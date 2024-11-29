@@ -1,5 +1,4 @@
 const swiper = new Swiper('.swiper', {
-  
   slidesPerView: 1,
   slidesPerGroup: 1,
   breakpoints: {
@@ -12,9 +11,9 @@ const swiper = new Swiper('.swiper', {
       slidesPerGroup: 4,
     }
   },
-  loopFillGroupWithBlank: true,
+  loop: true, // Mantén el loop si quieres un carrusel infinito
+  loopFillGroupWithBlank: false, // Evita que rellene slides vacías
   spaceBetween: 20,
-  loop: true,
   autoplay: {
     delay: 7000,
   },

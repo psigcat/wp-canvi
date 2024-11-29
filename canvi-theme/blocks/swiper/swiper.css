@@ -1,43 +1,208 @@
-.swiper {
-  width: 100%;
-  height: 400px;
-}
+/* Encapsulación bajo la clase madre */
+.favorites-swiper-container {
+  /* Contenedor General */
+  .wp-block-columns.alignfull {
+    overflow: visible;
+    position: relative;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    min-height: 400px;
+  }
 
-.swiper-slide {
-  text-align: left;
-  font-size: 14px;
-  cursor: pointer;
-  border: solid 1px black;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  /* Responsivo para Pantallas Pequeñas */
+  @media (max-width: 768px) {
+    .wp-block-columns.alignfull {
+      padding: 10px;
+    }
+  }
 
-.slide-top {
-  padding: 0 50px;
-}
+  /* Swiper General */
+  .swiper {
+    width: 100%;
+    height: 400px;
+  }
 
-.d_o_box {
-}
+  .swiper-wrapper {
+    display: flex;
+  }
 
-.d_o_box img {
-  width: 50px !important;
-}
+  .swiper-slide {
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid black; /* Borde negro alrededor de cada slide */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye espacio entre elementos */
+    height: 100%; /* Asegura que las slides ocupen toda la altura */
+    box-sizing: border-box; /* Asegura que padding y borde se incluyan en el tamaño */
+  }
 
-.raim_box img {
-  width: 50%;
-}
+  /* Evitar desbordamiento de contenido dentro de las slides */
+  .swiper-slide > * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
+  /* Solución para mantener slides completamente cerradas */
+  .swiper-slide {
+    position: relative;
+    padding: 10px; /* Espaciado interno para evitar que el contenido toque los bordes */
+    box-sizing: border-box;
+  }
+
+  /* Slide Top */
+  .slide-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .slide-top .id {
+    font-size: 12px;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 5px;
+  }
+
+  .slide-top a {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #b91d1d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 5px;
+  }
+
+  .slide-top .pot {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+  }
+
+  /* Evitar que el texto se desborde */
+  .slide-top a,
+  .slide-top .id,
+  .slide-top .pot {
+    display: block;
+    width: 100%; /* Se ajusta al ancho de la slide */
+    max-width: 100%; /* Evita desbordamientos */
+  }
+
+  /* Ajuste para textos largos */
+  .slide-top a:hover {
+    text-decoration: underline;
+    color: #a11919;
+  }
+
+  /* Swipe Images */
+  .swipe-images {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .swipe-images img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Raim Negro o Blanco */
+  .raim-negro img {
+    width: 100%;
+  }
+
+  .raim-blanco img {
+    width: 100%;
+  }
+
+  /* Slide Sub */
 .slide-sub {
-  background-color: #231f20b0;
-  position: absolute;
-  top: 300px;
-  width: 100%;
-  height: 100px;
-  font-size: 1.2rem;
-  color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 50px; /* Altura fija para el botón */
+    margin-top: auto; /* Empuja el botón al final de la slide */
+    padding: 10px;
 }
 
-.slide-sub a {
-  color: white;
+/* Estilo principal del botón */
+.slide-sub .button {
+    display: block; /* Asegura que el botón sea tratado como un bloque */
+    margin: 0 auto; /* Centra horizontalmente el botón */
+    width: 100%; /* Utiliza el 100% del ancho disponible */
+    max-width: 500px; /* Aumento el ancho máximo para que pueda ser más grande */
+    text-align: center; /* Centra el texto dentro del botón */
+    background-color: #b91d1d; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 12px 20px; /* Espaciado interno para mayor altura */
+    text-decoration: none; /* Quita el subrayado */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Hace que el texto sea más llamativo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sutil sombra para mayor profundidad */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animaciones suaves */
+    white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+}
+
+/* Estado hover (al pasar el cursor) */
+.slide-sub .button:hover {
+    background-color: #a11919; /* Cambia el color del fondo */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estado foco (al usar teclado) */
+.slide-sub .button:focus {
+    outline: 3px solid #fff; /* Resalta el botón al enfocarlo */
+    background-color: #8c1616; /* Opción para diferenciar el foco del hover */
+}
+
+/* Pantallas pequeñas */
+@media only screen and (max-width: 430px) {
+    .slide-sub .button {
+        width: 90%; /* Aumenta el ancho para móviles */
+        font-size: 14px; /* Reduce el tamaño de la fuente para que encaje mejor */
+    }
+}
+
+
+
+  /* Ajuste de Paginación */
+  .swiper-pagination {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  /* Evitar Slides Vacías */
+  .swiper-slide-empty {
+    display: none;
+  }
+
+  /* Debugging Border (Opcional) */
+  .swiper-slide {
+    /* border: 1px solid blue; */ /* Descomenta para visualizar los bordes */
+  }
+  
+  .swiper-slide.swiper-slide-blank {
+    display: none;
+  }
 }
