@@ -53,19 +53,19 @@
 		
 		<div class="d_o_box">
 	    <?php 
-	      /*$d_o = get_field( 'd_o_tax', get_the_ID() );
+	      $d_o = get_field( 'd_o_tax', get_the_ID() );
 	      if( $d_o ){
 	        foreach( $d_o as $term ): ?>
 	          <img class="d_o" src="<?php echo get_stylesheet_directory_uri(); ?>/images/do_<?php echo esc_html( $term->slug ); ?>.png" />
 	          <?php endforeach;
-	      } */
-	      $d_o = get_field( 'd_o', get_the_ID() );
+	      }
+	      /*$d_o = get_field( 'd_o', get_the_ID() );
 	      if( $d_o ){
 	      	$terms = explode(",", $d_o);
           foreach ( $terms as $term ): ?>
               <img class="d_o" src="<?php echo get_stylesheet_directory_uri(); ?>/images/do_<?php echo strtolower( trim($term) ); ?>.png" />
           <?php endforeach;
-        }
+        }*/
 	    ?>
         </div>
 		
@@ -116,23 +116,45 @@
 			</div>
 			<div class="column-ele">
 				<span class="label">Tipo guarda:</span>
-				<span class="value"><?php echo $tipus_guarda; ?></span>
+				<span class="value"><?php 
+				        if ( !empty( $tipus_guarda ) ) {
+				            echo esc_html( $tipus_guarda );
+				        } else {
+				            _e( 'No disponible', 'canvi' ); // Texto temporal si el campo está vacío
+				        }
+				        ?></span>
 			</div>
 			<div class="column-ele">
 				<span class="label">Producción:</span>
-				<span class="value"><?php echo $produccio_estimada; ?></span>
+				<span class="value"><?php if ( !empty( $produccio_estimada ) ) {
+				            echo esc_html( $produccio_estimada );
+				        } else {
+				            _e( 'No disponible', 'canvi' ); // Texto temporal si el campo está vacío
+				        } ?></span>
 			</div>
 			<div class="column-ele">
 				<span class="label">Valoración Experto:</span>
-				<span class="value"><?php echo $valoracion; ?></span>
+				<span class="value"><?php if ( !empty( $valoracion ) ) {
+				            echo esc_html( $valoracion );
+				        } else {
+				            _e( 'No disponible', 'canvi' ); // Texto temporal si el campo está vacío
+				        }  ?></span>
 			</div>
 			<div class="column-ele">
 				<span class="label">Calidad:</span>
-				<span class="value"><?php echo $calidad; ?></span>
+				<span class="value"><?php if ( !empty( $calidad ) ) {
+				            echo esc_html( $calidad );
+				        } else {
+				            _e( 'No disponible', 'canvi' ); // Texto temporal si el campo está vacío
+				        } ?></span>
 			</div>
 			<div class="column-ele">
 				<span class="label">Certificaciones:</span>
-				<span class="value"><?php echo $certificacion; ?></span>
+				<span class="value"><?php if ( !empty( $certificacion ) ) {
+				            echo esc_html( $certificacion );
+				        } else {
+				            _e( 'No disponible', 'canvi' ); // Texto temporal si el campo está vacío
+				        } ?></span>
 			</div>
 		</div>
 		

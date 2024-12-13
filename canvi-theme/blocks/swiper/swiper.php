@@ -47,19 +47,19 @@ if ( $parcela_query->have_posts() ) : ?>
                     <div class="swipe-images">
                         <div class="d_o_box">
                             <?php 
-                            /*$d_o = get_field('d_o_tax', get_the_ID());
+                            $d_o = get_field('d_o_tax', get_the_ID());
                             if ($d_o) {
                                 foreach ($d_o as $term): ?>
                                     <img class="d_o" src="<?php echo get_stylesheet_directory_uri(); ?>/images/do_<?php echo esc_html($term->slug); ?>.png" />
                                 <?php endforeach;
-                            }*/
-                            $d_o = get_field('d_o', get_the_ID());
+                            }
+                            /*$d_o = get_field('d_o', get_the_ID());
                             if ($d_o) {
                                 $terms = explode(",", $d_o);
                                 foreach ($terms as $term): ?>
                                     <img class="d_o" src="<?php echo get_stylesheet_directory_uri(); ?>/images/do_<?php echo strtolower( trim($term) ); ?>.png" />
                                 <?php endforeach;
-                            } 
+                            }*/
                             ?>
                         </div>
                         <div class="raim_box <?php echo ($color == 'negra') ? 'raim-negro' : 'raim-blanco'; ?>">
